@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+    
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+                <th>Descripcion</th>
+            </tr>
+        </thead>
+        <tbody id="table">
+            
+        </tbody>
+    </table>
+    <script>
+        const table_body = document.querySelector('#table')
+    let data = {}
+        fetch('./data.json')       
+        .then((response) => {
+            console.log(response);
+            return response.json()
+            })
+            .then((data) => {
+                const arr = Object.entries(data)
+                arr.forEach((item) => {
+                    const tr = document.createElement('tr')
+                    const td1 = document.createElement('td')
+                    const td2 = document.createElement('td')
+                    const td3 = document.createElement('td')
+                    const td4 = document.createElement('td')
+
+                    td1.textContent = item[1].name
+                    td2.textContent = item[1].price
+                    // element whit image
+                    const img = document.createElement('img')
+                    img.src = item[1].photo
+                    img.alt = item[1].name
+                    img.width = 140
+                    img.height = 100
+                    td3.appendChild(img)
+                    td4.textContent = item[1].description
+
+                    tr.appendChild(td1)
+                    tr.appendChild(td2)
+                    tr.appendChild(td3)
+                    tr.appendChild(td4)
+
+                    table_body.appendChild(tr)
+                            })
+            })
+    </script>
+</body>
+</html>

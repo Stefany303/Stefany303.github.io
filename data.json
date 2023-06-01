@@ -1,0 +1,38 @@
+{
+    "product1": {
+        "photo": "https://cdn.shopify.com/s/files/1/0551/6060/2784/products/OG_576a5394-ba6b-4096-a4ff-e24d85533a36.png?v=1655230241",
+        "name": "Chocolate",
+        "description": "Descripcion",
+        "price": 5.00
+    },
+    "product2": {
+        "photo": "https://vegaperu.vtexassets.com/arquivos/ids/158260/7750106001632.jpg?v=637660220513700000",
+        "name": "Galleta",
+        "description": "Descripcion",
+        "price": 5.00
+    },
+    "product3": {
+        "photo": "https://s7d2.scene7.com/is/image/TottusPE/42828866_1?wid=800&hei=800&qlt=70",
+        "name": "Galleta_soda",
+        "description": "Descripcion",
+        "price": 5.00
+    },
+    "product4": {
+        "photo": "https://corporacionliderperu.com/42457-large_default/sayon-caramelos-de-chicha-morada-x-110-un.jpg",
+        "name": "Caramelo",
+        "description": "Descripcion",
+        "price": 5.00
+    },
+    "product5": {
+        "photo": "https://corporacionliderperu.com/40913-large_default/sayon-caramelos-de-limon-x-110-un.jpg",
+        "name": "Caramelo de limón",
+        "description": "Descripcion",
+        "price": 5.00
+    },
+    "product6": {
+        "photo": "https://corporacionliderperu.com/40333-large_default/ambrosoli-caramelos-banderitas-x-80-un.jpg",
+        "name": "Ambrosoli",
+        "description": "Descripcion",
+        "price": 5.00
+    }
+}

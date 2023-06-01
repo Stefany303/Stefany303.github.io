@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+    background-color: antiquewhite;
+    border-color: blue;
+    padding: 20%;
+    height: 20px;
+  }
+  
+  .pelota {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid red;
+    background-color: red;
+    transform: translate(-50%, 0);
+
+  }
+  
+  .buttons {
+    padding: 10%;
+  }
+  
+  .pelota-animation {
+    animation: pelotaAnimation 4s infinite linear;
+  }
+  
+  .pelota-animation-paused {
+    animation-play-state: paused;
+  }
+  
+  .pelota-animation-reverse {
+    animation-direction: reverse;
+  }
+  .pelota-animation-reset {
+    animation: none;
+    transform: translate(-50%, 0);
+  }
+
+  @keyframes pelotaAnimation {
+    
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(500px);
+    }
+  }
+  
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pelota" id="pelota"></div>
+        <div class="buttons">
+            <button class="btn" id="play">Play</button>
+            <button class="btn" id="pause">pause</button>
+            <button class="btn" id="stop">stop</button>
+            <button class="btn" id="reverse">reverse</button>
+        </div>
+    </div>
+    <script>
+        const pelota = document.getElementById('pelota')
+const playbtn=document.getElementById('play')
+const pausebtn=document.getElementById('pause')
+const stopbtn=document.getElementById('stop')
+const reversebtn=document.getElementById('reverse')
+
+playbtn.addEventListener("click", () => {
+  pelota.classList.add("pelota-animation");
+  pelota.classList.remove("pelota-animation-paused");
+  pelota.classList.remove("pelota-animation-reset");
+  pelota.classList.remove("pelota-animation-reverse"); 
+});
+
+pausebtn.addEventListener("click", () => {
+  pelota.classList.add("pelota-animation-paused");
+  pelota.classList.remove("pelota-animation-reset"); 
+  pelota.classList.remove("pelota-animation-reverse");
+});
+
+stopbtn.addEventListener("click", () => {
+  pelota.classList.add("pelota-animation-reset");  
+  pelota.classList.remove("pelota-animation");
+  pelota.classList.remove("pelota-animation-paused");
+  pelota.classList.remove("pelota-animation-reverse");
+  });
+
+
+reversebtn.addEventListener("click", () => {
+  pelota.classList.toggle("pelota-animation-reverse");
+  pelota.classList.remove("pelota-animation-reset");
+  pelota.classList.remove("pelota-animation-paused");
+  });
+  
+  
+
+    </script>
+</body>
+</html>
